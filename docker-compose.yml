@@ -1,0 +1,14 @@
+version: '3.8'
+
+services:
+  api:
+    build: . 
+    ports:
+      - "8000:8000"
+    volumes:
+      - api_data:/app/data
+    environment:
+      - DATABASE_URL=sqlite:///app/data/test.db
+
+volumes:
+  api_data:
